@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "theme.css" />
+  </head>
+  <body>
+    <div id="design-utils hidden">
+
+      <!-- COLUMNS -->
+      <div class="grid hidden">
+        <!-- Inject configured grids here -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- GUIDES -->
+      <div class="guides hidden">
+        <!-- Inject configured grids here -->
+        <div class="hor"></div>
+        <div class="hor"></div>
+        <div class="vert"></div>
+        <div class="vert"></div>
+      </div>
+    </div>
+
+    <div id="overlay">
+      <div class="blackout"></div>
+      <div id="panel-right">
+        <button class="icon close"><i class="mdi mdi-close"></i></button>
+        <h2>Panel Heading</h2>
+        <div class="panel-content"></div>
+      </div>
+    </div>
+    
+    <div id="topbar">
+      <div class="left">
+        <button class="icon"><i class="mdi mdi-menu"></i></button>
+        <button class="icon"><i class="mdi mdi-chevron-left"></i></button>
+      </div>
+      <div class="right">
+        <button class="icon"><i class="mdi mdi-clipboard-text"></i></button>
+        <button class="icon"><i class="mdi mdi-bell"></i></button>
+        <button class="icon"><i class="mdi mdi-cog"></i></button>
+        <button class="icon"><i class="mdi mdi-power"></i></button>
+      </div>
+    </div>
+
+    <div id="sidenav" class="animate__animated animate__slideInLeft">
+      <div class="top-logo">
+        <img src="assets/truenas_core_logo.png"/>
+      </div>
+      <div class="menu-list">
+        <div class="menu-list-item selected">
+          <button class="icon"><i class="mdi mdi-menu"></i></button>
+          <div class="label">&nbsp;&nbsp;Dashboard</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-server"></i></button>
+          <div class="label">&nbsp;&nbsp;Storage</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-share-variant"></i></button>
+          <div class="label">&nbsp;&nbsp;Shares</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-shield"></i></button>
+          <div class="label">&nbsp;&nbsp;Data Protection</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-lan"></i></button>
+          <div class="label">&nbsp;&nbsp;Network</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-key-variant"></i></button>
+          <div class="label">&nbsp;&nbsp;Credentials</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-application"></i></button>
+          <div class="label">&nbsp;&nbsp;Applications</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-laptop"></i></button>
+          <div class="label">&nbsp;&nbsp;Virtualization</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-poll-box"></i></button>
+          <div class="label">&nbsp;&nbsp;Reporting</div>
+          <div class="selected-border"></div>
+        </div>
+        <div class="menu-list-item">
+          <button class="icon"><i class="mdi mdi-cogs"></i></button>
+          <div class="label">&nbsp;&nbsp;System Settings</div>
+          <div class="selected-border"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="main" class="sidebar-open">
+      <h1>Page Title Component</h1>
+      <div class="card">
+        <div class="card-title">
+          <h3>Card Title</h3>
+        </div>
+        <div class="card-content"><span class="code">echo "This is cli command" &gt; /dev/null</span></div>
+      </div>
+    </div>
+
+    <div id="footer" class="hidden">
+      <div id="footer-label"><small>Demo Controls</small></div>
+      <button class="btn btn-default">Dark</button>
+      <button class="btn btn-default">Light</button>
+      <button class="btn btn-default hidden">Grid</button>
+      <button class="btn btn-default hidden">Guides</button>
+    </div>
+
+  </body>
+</html>

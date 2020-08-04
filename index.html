@@ -5,9 +5,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inconsolata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
     <link rel = "stylesheet" type = "text/css" href = "theme.css" />
+    <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
-    <div id="design-utils hidden">
+    <div id="design-utils" class="hidden">
 
       <!-- COLUMNS -->
       <div class="grid hidden">
@@ -21,19 +22,61 @@
       <!-- GUIDES -->
       <div class="guides hidden">
         <!-- Inject configured grids here -->
-        <div class="hor"></div>
-        <div class="hor"></div>
-        <div class="vert"></div>
-        <div class="vert"></div>
+        <div class="hor" style="top: 48px"></div>
+        <div class="hor" style="top: 66px"></div>
+        <div class="vert" style="left: 240px"></div>
+        <div class="vert" style="left: 272px"></div>
       </div>
     </div>
 
-    <div id="overlay">
+    <div id="overlay" class="">
       <div class="blackout"></div>
       <div id="panel-right">
         <button class="icon close"><i class="mdi mdi-close"></i></button>
         <h2>Panel Heading</h2>
-        <div class="panel-content"></div>
+        <div class="panel-content">
+          <form>
+
+            <!-- INPUT EXAMPLE -->
+            <div class="form-element">
+              <div class="label input-text">
+                <label for="fname">First name:</label>
+              </div>
+              <input type="text" id="firstname" name="firstname">
+            </div>
+
+            <!-- SELECT EXAMPLE -->
+            <div class="form-element">
+              <div class="label input-select">
+                <label for="cars">Choose a select option:</label>
+              </div>
+              <select id="cars" name="cars">
+                <option value="volvo">Select Option 1</option>
+                <option value="saab">Select Option 2</option>
+                <option value="fiat">Select Option 3</option>
+                <option value="audi">Select Option 4</option>
+              </select>
+            </div>
+
+            <!-- CHECKBOX EXAMPLE -->
+            <div class="form-element">
+              <input type="checkbox" id="option1" name="firstname">
+              <label for="fname">Option 1</label>
+            </div>
+
+            <!-- CHECKBOX EXAMPLE -->
+            <div class="form-element">
+              <input type="checkbox" id="option2" name="firstname">
+              <label for="fname">Option 2</label>
+            </div>
+
+            <!-- CHECKBOX EXAMPLE -->
+            <div class="form-element">
+              <input class="btn btn-primary" type="submit" id="option2" name="firstname">
+            </div>
+
+          </form>
+        </div>
       </div>
     </div>
     
@@ -50,7 +93,7 @@
       </div>
     </div>
 
-    <div id="sidenav" class="animate__animated animate__slideInLeft">
+    <div id="sidenav" class="">
       <div class="top-logo">
         <img src="assets/truenas_core_logo.png"/>
       </div>
@@ -109,19 +152,69 @@
     </div>
 
     <div id="main" class="sidebar-open">
-      <h1>Page Title Component</h1>
+      <div class="page-title">
+        <h1>Page Title</h1>
+        <div class="page-actions">
+        <button class="btn btn-primary panel-trigger">Panel</button>
+        </div>
+      </div>
+
       <div class="card">
         <div class="card-title">
           <h3>Card Title</h3>
+
+          <!-- TABLE -->
+          <div class-"table">
+            <div class="thead">
+              <div class="tr">
+                <div class="th">Col</div>
+                <div class="th">Col</div>
+                <div class="th">Col</div>
+                <div class="th">Col</div>
+              </div>
+            </div>
+            <div class="tbody">
+              <div class="tr">
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+              </div>
+              <div class="tr">
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+              </div>
+              <div class="tr">
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+              </div>
+              <div class="tr">
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+                <div class="td">Cell</div>
+              </div>
+            </div>
+          </div>
+          <!-- END TABLE -->
+
         </div>
         <div class="card-content"><span class="code">echo "This is cli command" &gt; /dev/null</span></div>
       </div>
     </div>
 
-    <div id="footer" class="hidden">
+    <div id="footer" class="open">
+      <div id="footer-trigger">
+        <button class="icon"><i class="mdi mdi-chevron-down"></i></button>
+      </div>
       <div id="footer-label"><small>Demo Controls</small></div>
-      <button class="btn btn-default">Dark</button>
-      <button class="btn btn-default">Light</button>
+      <button class="btn btn-default grid-trigger">Grid</button>
+      <button class="btn btn-default guides-trigger">Guides</button>
+      <button class="btn btn-default hidden">Light</button>
       <button class="btn btn-default hidden">Grid</button>
       <button class="btn btn-default hidden">Guides</button>
     </div>

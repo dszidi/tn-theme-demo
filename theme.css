@@ -7,7 +7,7 @@ body,html{
 
 /*CSS-VARS*/
 :root {
-    --animate-duration: 500ms;
+    --animate-duration: 200ms;
     --topbar: #000;
     --accentColors: green,violet,orange,cyan,magenta,red,yellow,blue;
     --primary: var(--blue);
@@ -25,7 +25,7 @@ body,html{
     --red: #ff0013;
     --magenta: #d238ff;
     --violet: #c17ecc;
-    --blue: #0D5788;
+    --blue: #0095D5;
     --cyan: #00d0d6;
     --green: #1F9642;
 }
@@ -69,6 +69,8 @@ h4 {font-size: 1.44em;}
 h5 {font-size: 1.2em;}
 
 small, .text_small {font-size: 0.833em;}
+
+.text-extra-small{ font-size: x-small;}
 
 span.code{
   font-family:'Inconsolata';
@@ -191,26 +193,46 @@ button.icon{
   width: 100vw;
   height: 100vh;
   top: 0;
+  z-index: -22; 
+}
+
+#overlay.open,
+#overlay.animating {
   z-index: 22;
 }
 
+#overlay.open .blackout,
+#overlay.animating .blackout{ 
+  display: block; 
+}
 #overlay .blackout{
   position: absolute;
   background-color: #000;
   opacity: 0.75;
   width: calc(100vw);
   height: 100vh;
-  top: 48px;
+  top: 48px; 
+  display: none;
 }
 
+#overlay.open #panel-right{ 
+  left: unset;
+  right: 0;
+}
 #overlay #panel-right{
   position:absolute;
-  right: 0;
-  min-width: 360px;
+  left: 100vw;
+  right: unset;
+  width: 360px;
   height: calc(100vh - 48px);
   margin-top:48px;
   background-color: var(--bg2);
   padding: 32px;
+  --animate-duration: 0.2s;
+}
+
+#overlay #panel-right.open{
+  right: 0;
 }
 
 #overlay #panel-right .icon.close:hover {
@@ -230,6 +252,13 @@ button.icon{
 
 #main.sidebar-open{
   margin: 80px 48px 48px 240px;
+}
+
+.page-title { position: relative }
+.page-title .page-actions{
+  position: absolute;
+  right: 0;
+  bottom: 4px;
 }
 
 .card{
@@ -252,19 +281,93 @@ button.icon{
   border-style: unset;
 }
 
+.btn-primary {
+  background-color: var(--primary);
+}
+
+/* FORM STYLES*/
+.form-element{
+  margin: 16px 0;
+  text-align:left;
+}
+.form-element .label{
+}
+
+.form-element .label.input-text,
+.form-element .label.input-select{
+  font-size: x-small;
+  margin-bottom: 4px;
+}
+
+.form-element input[type = "text"],
+.form-element select{
+  width: 100%;
+  background-color: var(--bg1);
+  color: var(--fg1);
+  border: solid 1px var(--alt-fg1);
+  padding: 8px;
+}
+
+.form-element input[type = "checkbox"]{
+  appearance: none;
+  /* background-color: var(--primary); */
+  width: 20px;
+  height: 20px;
+  border: solid 2px var(--primary);
+  border-radius: 2px;
+  margin-right: 8px;
+  position: relative;
+}
+
+[type=radio]:checked::before,
+[type=checkbox]:checked::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: var(--primary);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+/* TABLE STYLES */
+.table { display: table; }
+.tr { display: table-row }
+.td, .th { display: table-cell }
+
+.tr {
+}
+
+.thead {
+  background-color: var(--bg1);
+}
+
 
 /*DEMO CONTROLS*/
 #footer{
   position:fixed;
   z-index: 30;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
+  top: 100vh;
+  bottom: unset;
+  background-color: var(--topbar);
   width:calc(100vw - 32px);
   padding: 8px 16px 16px;
 }
+#footer.open {
+  top: unset;
+  bottom: 0;
+}
+
+#footer #footer-trigger .icon:hover { cursor: pointer; }
+#footer #footer-trigger{
+  position: absolute;
+  top: -30px;
+  left: 0;
+  background-color: #000;
+}
 
 #footer .btn:hover{
-  background-color:blue;
+  background-color: var(--bg2);
 }
 
 #footer-label{
@@ -278,10 +381,11 @@ button.icon{
 .hidden { display: none !important; }
 
 #design-utils{
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   position: fixed;
-  z-index: 40;
+  z-index: 30;
+  top: 0;
 }
 
 .grid{
